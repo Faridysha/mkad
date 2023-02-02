@@ -111,6 +111,12 @@ function pokazi_popy() {
     if (right === true) {
         runner.x += runner.vx
     }
+    if (runner.x < 0 || runner.x > 600 || runner.y < 0 || runner.y > 300) {
+        runner.x = 10;
+        runner.y = 140;
+    } {
+
+    }
     runner.draw();
     for (elem of arr) {
         if (elem.y > 300) {
