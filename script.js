@@ -96,7 +96,7 @@ function pokazi_popy() {
         elem.draw();
         elem.y += elem.vy;
     }
-    if (level.count > 1) {
+    if (level.count > 10) {
         ctx.clearRect(0,0,canvas.width, ctx.canvas.height);
         ctx.font =  'bold 54px serif';
         ctx.fillText('КОНГРАТЮЛЕЙШЕНС', 0,170);
