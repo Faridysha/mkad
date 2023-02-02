@@ -1,6 +1,8 @@
 canvas = document.getElementById('mkad');
 ctx = canvas.getContext('2d');
 let raf;
+let car = new Image();
+    car.src = 'car.png';
 let runner = {
     x: 10,
     y: 140,
@@ -9,9 +11,11 @@ let runner = {
     vx: 3,
     color: 'red',
     draw: function() {
+        
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.w, this.h);
         ctx.fill();
+        
     }
 }
 let button_arrow = {
@@ -24,24 +28,25 @@ let button_arrow = {
 let up, left, down, right = false;
 
 let palka = {
-    x: 100,
+    x: 125,
     y: 1,
-    w: 10,
+    w: 20,
     h: 50,
     vy: 1,
     count: 0,
     speed: 1,
     color: 'black',
     draw: function() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.w, this.h);
-        ctx.fill();
+        // ctx.fillStyle = this.color;
+        // ctx.fillRect(this.x, this.y, this.w, this.h);
+        // ctx.fill();
+        ctx.drawImage(car, this.x, this.y, this.w, this.h);
     }
 }
 
 let arr = [];
-for (let i = 0; i < 14; i++) {
-    palka.x += 20;
+for (let i = 0; i < 9; i++) {
+    palka.x += 30;
     palka.y = Math.random() * 300;
     palka.vy = (Math.random() + 1) * 1;
     arr.push({...palka});
@@ -89,15 +94,15 @@ function pokazi_popy() {
     death.draw();
     level.draw();
     if (level.count == 0) {
-        ctx.drawImage(tyan1, 480, 120, 200,200)
+        ctx.drawImage(tyan1, 500, 120, 200,200)
     } else if (level.count == 1) {
-        ctx.drawImage(tyan2, 480, 120, 190,200)
+        ctx.drawImage(tyan2, 500, 120, 190,200)
     }else if (level.count == 2) {
-        ctx.drawImage(tyan3, 480, 120, 220,200)
+        ctx.drawImage(tyan3, 500, 120, 220,200)
     } else if (level.count == 3) {
-        ctx.drawImage(tyan4, 480, 120, 200,200)
+        ctx.drawImage(tyan4, 500, 120, 200,200)
     }else if (level.count == 4 && death.count == 0) {
-        ctx.drawImage(tyan5, 450,10, 250,300)
+        ctx.drawImage(tyan5, 473,10, 230,300)
     }
     if (left === true) {
         runner.x -= runner.vx;
