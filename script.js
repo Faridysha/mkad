@@ -116,11 +116,19 @@ function pokazi_popy() {
     if (right === true) {
         runner.x += runner.vx
     }
+    
+    if (runner.x > 400) {
+        runner.x = 10;
+        runner.y = 140;
+        level.count += 1;
+        for (elem of arr) {
+            elem.vy += 1;
+        }
+    }
+    
     if (runner.x < 0 || runner.x > 600 || runner.y < 0 || runner.y > 300) {
         runner.x = 10;
         runner.y = 140;
-    } {
-
     }
     runner.draw();
     for (elem of arr) {
@@ -152,16 +160,6 @@ window.addEventListener('keydown', function (event) {
     } else if (event.keyCode == button_arrow.down) {
         down = true;
     }
-    if (runner.x > 400) {
-        runner.x = 10;
-        runner.y = 140;
-        level.count +=1;
-        for( elem of arr) {
-            elem.vy += 1;
-        }
-    }
-
-    
  });
  window.addEventListener('keyup', function (event) {
     if (event.keyCode == button_arrow.right) {
