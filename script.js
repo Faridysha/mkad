@@ -60,6 +60,18 @@ let level = {
         ctx.fillText(`Level: ${this.count}`, 10, 30)
     }
 }
+
+let tyan1 = new Image();
+tyan1.src = 'tyan1.png'
+let tyan2 = new Image();
+tyan2.src = 'tyan2.png';
+let tyan3 = new Image();
+tyan3.src = 'tyan3.png';
+let tyan4 = new Image();
+tyan4.src = 'tyan4.png';
+let tyan5 = new Image();
+tyan5.src = 'tyan5.png'
+
 function touch(arr) {
     for (elem of arr) {
        
@@ -76,6 +88,17 @@ function pokazi_popy() {
     touch(arr);
     death.draw();
     level.draw();
+    if (level.count == 0) {
+        ctx.drawImage(tyan1, 480, 120, 200,200)
+    } else if (level.count == 1) {
+        ctx.drawImage(tyan2, 480, 120, 190,200)
+    }else if (level.count == 2) {
+        ctx.drawImage(tyan3, 480, 120, 220,200)
+    } else if (level.count == 3) {
+        ctx.drawImage(tyan4, 480, 120, 200,200)
+    }else if (level.count == 4) {
+        ctx.drawImage(tyan5, 450,10, 250,300)
+    }
     if (left === true) {
         runner.x -= runner.vx;
     }  
