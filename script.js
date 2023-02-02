@@ -43,7 +43,7 @@ let arr = [];
 for (let i = 0; i < 14; i++) {
     palka.x += 20;
     palka.y = Math.random() * 300;
-    palka.vy = (Math.random() + 1) * 0.5;
+    palka.vy = (Math.random() + 1) * 1;
     arr.push({...palka});
    
 }
@@ -96,7 +96,7 @@ function pokazi_popy() {
         ctx.drawImage(tyan3, 480, 120, 220,200)
     } else if (level.count == 3) {
         ctx.drawImage(tyan4, 480, 120, 200,200)
-    }else if (level.count == 4) {
+    }else if (level.count == 4 && death.count == 0) {
         ctx.drawImage(tyan5, 450,10, 250,300)
     }
     if (left === true) {
