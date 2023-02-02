@@ -84,6 +84,7 @@ function touch(arr) {
             death.count += 1;
             runner.x = 10;
             runner.y = 140;
+            level.count = 0
         }
 
     }
