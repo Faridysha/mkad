@@ -85,6 +85,7 @@ function touch(arr) {
             runner.x = 10;
             runner.y = 140;
             level.count = 0
+            palka.speed = 1;
         }
 
     }
