@@ -34,7 +34,7 @@ let palka = {
     h: 50,
     vy: 1,
     count: 0,
-    speed: 1,
+    
     color: 'black',
     draw: function() {
         // ctx.fillStyle = this.color;
@@ -84,12 +84,15 @@ function touch(arr) {
             death.count += 1;
             runner.x = 10;
             runner.y = 140;
-            level.count = 0
-            palka.vy = 1;
+            level.count = 0;
+            for (elem of arr) {
+                elem.vy = 1;
+            }
+            
         }
-
+        
     }
-}
+};
 function pokazi_popy() {
     ctx.clearRect(0,0, canvas.width, canvas.height);
     touch(arr);
