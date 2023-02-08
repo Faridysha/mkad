@@ -86,7 +86,7 @@ function touch(arr) {
             runner.y = 140;
             level.count = 0;
             for (elem of arr) {
-                elem.vy = 1;
+                elem.vy = (Math.random() + 1) * 1;
             }
             
         }
